@@ -13,6 +13,8 @@ public class Doctor {
      * @param theCol The column this Doctor starts at.
      */
     public Doctor(int theRow, int theCol) {
+        this.row = row;
+        this.col = col;
 
     }
 
@@ -28,6 +30,21 @@ public class Doctor {
      * @param newCol The column the player clicked on.
      */
     public void move(int newRow, int newCol) {
+        //create an integer to get a random row for the doctor to move
+        int randomRow = (int)(Math.random() * 12);
+        
+        //create an integer to get a random column for the doctor to move
+        int randomCol = (int) (Math.random() * 12);
+        
+        //if the doctor ison the 
+        if(this.row - newRow <= 1 && this.row - newRow >= -1 && this.col - newCol <= 1 && this.col - newRow >= -1 ){
+            this.row = row;
+            this.col = col;
+        } else{
+            //if does not work it will random column and row
+            this.row = randomRow;
+            this.col = randomCol;
+        }
 
     }
 
@@ -37,6 +54,7 @@ public class Doctor {
      * @return This Doctor's row.
      */
     public int getRow() {
+        return this.row;
 
     }
 
@@ -46,6 +64,7 @@ public class Doctor {
      * @return This Doctor's column.
      */
     public int getCol() {
+        return this.col;
 
     }
 
