@@ -13,8 +13,8 @@ public class Doctor {
      * @param theCol The column this Doctor starts at.
      */
     public Doctor(int theRow, int theCol) {
-        this.row = row;
-        this.col = col;
+        this.row = theRow;
+        this.col = theCol;
 
     }
 
@@ -30,22 +30,15 @@ public class Doctor {
      * @param newCol The column the player clicked on.
      */
     public void move(int newRow, int newCol) {
-        //create an integer to get a random row for the doctor to move
-        int randomRow = (int)(Math.random() * 12);
-        
-        //create an integer to get a random column for the doctor to move
-        int randomCol = (int) (Math.random() * 12);
-        
-        //if the doctor ison the 
-        if(this.row - newRow <= 1 && this.row - newRow >= -1 && this.col - newCol <= 1 && this.col - newRow >= -1 ){
+         //Moves the Doctor 1 space
+        if(Math.abs(this.row - row) <= 1 && Math.abs(this.col - col) <= 1) {
             this.row = row;
             this.col = col;
-        } else{
-            //if does not work it will random column and row
-            this.row = randomRow;
-            this.col = randomCol;
+        }else{
+        //Teleports the Doctor
+            this.row = (int) (Math.random() * 12);
+            this.col = (int) (Math.random() * 12);
         }
-
     }
 
     /**
