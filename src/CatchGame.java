@@ -16,8 +16,7 @@ public class CatchGame {
     private Doctor doctor;
     private Dalek d1, d2, d3;
    
-
-    
+ 
   
     /**
      * The constructor for the game. 
@@ -87,15 +86,15 @@ public class CatchGame {
           //all the dalek will go foward to the doctor
           d1.advanceTowards(doctor);
           //place the first dalek peg
-          board.putPeg(Color.black, d1.getRow(), d1.getCol());
+          board.putPeg(Color.BLACK, d1.getRow(), d1.getCol());
           
           //dalek 2 will go forward to the doctor
           d2.advanceTowards(doctor);
-          board.putPeg(Color.black, d2.getRow(), d2.getCol());
+          board.putPeg(Color.BLACK, d2.getRow(), d2.getCol());
           
           //dalek3 will go forward to the doctor 
           d3.advanceTowards(doctor);
-          board.putPeg(Color.black, d3.getRow(), d3.getCol());
+          board.putPeg(Color.BLACK, d3.getRow(), d3.getCol());
           
            //check of dalek 1 has crashed with the doctor
             if (doctor.getRow() == d1.getRow() && doctor.getCol() == d1.getCol()) {
@@ -103,7 +102,7 @@ public class CatchGame {
                 board.removePeg(doctor.getRow(), doctor.getCol());
                 board.removePeg(d1.getRow(),d1.getCol());
                 //put a yellow peg if dalek1 and doctor crash
-                board.putPeg(Color.yellow, doctor.getRow(), doctor.getCol());
+                board.putPeg(Color.YELLOW, doctor.getRow(), doctor.getCol());
                 
             }
             //check if dalek2 and doctor crash each other
@@ -121,7 +120,7 @@ public class CatchGame {
                 board.removePeg(doctor.getRow(), doctor.getCol());
                 board.removePeg(d3.getRow(), d3.getCol());
                   //put a yellow peg if dalek13 and doctor crash
-                board.putPeg(Color.yellow,doctor.getRow(), doctor.getCol());
+                board.putPeg(Color.YELLOW,doctor.getRow(), doctor.getCol());
             }
             //check if all the daleks crashed with the doctor
             if(doctor.getRow() == d1.getRow() && doctor.getCol() == d1.getCol()
@@ -130,7 +129,7 @@ public class CatchGame {
                 //remove the peg for the dalek
                 board.removePeg(doctor.getRow(),doctor.getCol());
                 //put a yellow peg if all the daleks crashes with the doctor
-                board.putPeg(Color.yellow, doctor.getRow(), doctor.getCol());
+                board.putPeg(Color.YELLOW, doctor.getRow(), doctor.getCol());
                 //display on the board you have lost
                 board.displayMessage("You have lost!");
                 break;
