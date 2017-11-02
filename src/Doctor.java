@@ -30,17 +30,20 @@ public class Doctor {
      * @param newCol The column the player clicked on.
      */
     public void move(int newRow, int newCol) {
-         //Moves the Doctor 1 space
-        if(Math.abs(this.row - row) <= 1 && Math.abs(this.col - col) <= 1) {
-            this.row = row;
-            this.col = col;
-        }else{
-        //Teleports the Doctor
-            this.row = (int) (Math.random() * 12);
-            this.col = (int) (Math.random() * 12);
+          // Integer for a random move (Row)
+        int randomRow = (int) (Math.random() * 12);
+        // Integer for a random move (Col)
+        int randomCol = (int) (Math.random() * 12);
+        // If the doctor is one spot away, then move there & if the spot is more than one teleport randomly to another spot within the game board   
+        if (this.row - newRow <= 1 && this.row - newRow >= -1 && this.col - newCol <= 1 && this.col - newCol >= -1) {
+            this.row = newRow;
+            this.col = newCol;
+        } else {
+            // Randomize the new spot of the doctor within the game board
+            this.row = randomRow;
+            this.col = randomCol;
         }
     }
-
     /**
      * Returns the row of this Doctor.
      *
