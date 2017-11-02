@@ -34,6 +34,7 @@ public class Doctor {
         int randomRow = (int) (Math.random() * 12);
         // Integer for a random move (Col)
         int randomCol = (int) (Math.random() * 12);
+        
         // If the doctor is one spot away, then move there & if the spot is more than one teleport randomly to another spot within the game board   
         if (this.row - newRow <= 1 && this.row - newRow >= -1 && this.col - newCol <= 1 && this.col - newCol >= -1) {
             this.row = newRow;
