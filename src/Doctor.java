@@ -39,6 +39,7 @@ public class Doctor {
         if (this.row - newRow <= 1 && this.row - newRow >= -1 && this.col - newCol <= 1 && this.col - newCol >= -1) {
             this.row = newRow;
             this.col = newCol;
+            
         } else {
             // Randomize the new spot of the doctor within the game board
             this.row = randomRow;
