@@ -27,26 +27,28 @@ public class CatchGame {
       //create the game board
       this.board = new Board(12,12);
       
+      //find a random place in the boad for the doctor
       int docRow = (int)(Math.random() * 12);
       int docCol = (int) (Math.random() * 12);
       //create the doctor
        doctor = new Doctor (docRow, docCol);
 
+    //find a random place in the boad for dalek1
      int d1Row = (int)(Math.random() * 12);
      int d1Col= (int)(Math.random() * 12);
      //create the first dalek
-      d1 = new Dalek(d1Row, d1Col);
+     d1 = new Dalek(d1Row, d1Col);
 
-
+     //find a random place in the boad for dalek2
      int d2Row = (int)(Math.random() * 12);
      int d2Col= (int)(Math.random() * 12);
      //create the second dalek
      d2 = new Dalek (d2Row, d2Col);
 
- 
-     int d3Row = (int)(Math.random() * 12);
-     int d3Col= (int)(Math.random() * 12);
-     //create the third dalek
+    //find a random place in the boad for dalek3
+    int d3Row = (int)(Math.random() * 12);
+    int d3Col= (int)(Math.random() * 12);
+    //create the third dalek
     d3 = new Dalek (d3Row, d3Col);
     
     
@@ -57,6 +59,7 @@ public class CatchGame {
      //putting a black peg for the dalek3
     board.putPeg(Color.BLACK, d3.getRow(), d3.getCol());
     
+    //put a green peg for the doctor
     board.putPeg(Color.GREEN,doctor.getRow(), doctor.getCol());
  
     }
@@ -75,7 +78,7 @@ public class CatchGame {
           board.removePeg(doctor.getRow(), doctor.getCol());
           // Move the doctor peg to new location where the player clicked
           doctor.move(click.getRow(), click.getCol());
-           // Place the doctor peg!
+           // Place the doctor peg
           board.putPeg(Color.GREEN, doctor.getRow(), doctor.getCol());
           
           //remove the old three daleks peg
