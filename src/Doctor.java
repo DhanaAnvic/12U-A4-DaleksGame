@@ -59,19 +59,8 @@ public class Doctor {
     public int getCol() {
         return this.col;
 
+        
     }
-    public void setRow(int row) {
-        this.row = row;
-    }
-    
-    /**
-     * Sets the column of this Doctor.
-     * 
-     * @param col This Doctor's column.
-     */
-
-    public void setCol(int col) {
-        this.col = col;
-    }
-
 }
+
+
