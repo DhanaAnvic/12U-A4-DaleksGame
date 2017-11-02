@@ -16,7 +16,6 @@ public class Dalek {
     public Dalek(int theRow, int theCol) {
         this.col = col;
         this.row = row;
-        hasCrashed = false;
     }
 
     /**
@@ -28,10 +27,6 @@ public class Dalek {
      * @param doc The Doctor to move towards.
      */
     public void advanceTowards(Doctor doc) {
-         if (hasCrashed == false) {
-            //gets the coordinates of the Doctor
-            int docRow = doc.getRow();
-            int docCol = doc.getCol();
             
         //if the doctor's row is greater than Dalek
         //it will move forward the same way as the dcctor
@@ -44,7 +39,7 @@ public class Dalek {
             this.row--;
         }
         //if the doctor's col is greater than Dalek
-        //it will move forward the same way as the dcctor
+        //it will move forward the same way as the doctor
         if(doc.getCol() > this.col){
             this.col++;
         }
@@ -55,7 +50,7 @@ public class Dalek {
         }
          }
          
-    }
+    
 
     /**
      * Returns the row of this Dalek.
@@ -81,7 +76,7 @@ public class Dalek {
      * Sets the Dalek to be in a crashed state.
      */
     public void crash() {
-    hasCrashed = true;
+    this. hasCrashed = true;
         
 
         }
@@ -91,8 +86,12 @@ public class Dalek {
      *
      * @return true if this Dalek has crashed, false otherwise
      */
-    public boolean hasCrashed() {
-        return hasCrashed;
+    public boolean hasCrashed(Dalek dalek) {
+        if(this.row == dalek.getRow() && this.col== dalek.getCol()){
+            return true;
+        } else {
+            return false;
+        }
     
     }
 
